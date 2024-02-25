@@ -51,8 +51,8 @@ form > button {
   width: 85%;
   background-color: #2563eb;
   color: white;
-  font-size: 20px;
-  line-height: 20px;
+  font-size: 16px;
+  line-height: 16px;
   padding: 10px 20px;
   border: 1px solid #1e3a8a;
   border-radius: 5px;
@@ -83,4 +83,15 @@ a:hover {
 
 p {
   margin: 0;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  color: #1e293b;
+  background-color: #f8fafc;
+  border: 1px solid #1e293b;
+}
+button:disabled:hover {
+  color: #1e293b;
+  background-color: #f8fafc;
 }
