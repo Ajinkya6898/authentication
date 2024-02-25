@@ -7,6 +7,20 @@ const ChangePassword = () => {
     newpassword: "",
     confirmpassword: "",
   });
+  const [errors, setErrors] = useState({});
+  const { newpassword, confirmpassword } = changePasswordFormData;
+
+  const validateForm = () => {
+    const newErrors = {};
+
+    if (!newpassword) {
+      newErrors.newpassword = "Password is required";
+    } else if (newpassword.length < 5) {
+      newErrors.newpassword = "Password must be greater than 5 letters";
+    }
+
+    setErrors(newErrors);
+  };
 
   const handlePasswordChange = (e) => {
     const { name, value } = e.target;
@@ -16,11 +30,18 @@ const ChangePassword = () => {
     });
   };
 
-  const { newpassword, confirmpassword } = changePasswordFormData;
+  const handleChangePassword = (e) => {
+    e.preventDefault();
+    const hasErrors = validateForm();
+    if (!hasErrors) {
+      console.log(changePasswordFormData);
+    }
+  };
+
   return (
     <div className="container">
       <div className="wrapper">
-        <form>
+        <form onSubmit={handleChangePassword}>
           <h1>Change Password</h1>
           <input
             value={newpassword}
@@ -29,6 +50,9 @@ const ChangePassword = () => {
             type="password"
             placeholder="New Password"
           />
+          {errors.newpassword && (
+            <span className="error">{errors.newpassword}</span>
+          )}
           <input
             value={confirmpassword}
             name="confirmpassword"

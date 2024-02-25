@@ -97,3 +97,9 @@ button:disabled:hover {
   color: #1e293b;
   background-color: #f8fafc;
 }
+
+.error {
+  display: block;
+  color: #ef4444;
+  margin: -10px 0 10px 0;
+}
