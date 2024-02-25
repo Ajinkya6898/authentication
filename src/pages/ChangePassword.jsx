@@ -3,20 +3,20 @@ import { Link } from "react-router-dom";
 import "../styles/form.css";
 
 const ChangePassword = () => {
-  const [formData, setFormData] = useState({
+  const [changePasswordFormData, setChangePasswordFormData] = useState({
     newpassword: "",
     confirmpassword: "",
   });
 
   const handlePasswordChange = (e) => {
     const { name, value } = e.target;
-    setFormData({
-      ...formData,
+    setChangePasswordFormData({
+      ...changePasswordFormData,
       [name]: value,
     });
   };
 
-  const { newpassword, confirmpassword } = formData;
+  const { newpassword, confirmpassword } = changePasswordFormData;
   return (
     <div className="container">
       <div className="wrapper">

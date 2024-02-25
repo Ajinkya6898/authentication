@@ -25,10 +25,12 @@ form > h1 {
 
 form > input {
   width: 75%;
-  padding: 12px 20px;
+  padding: 10px 20px;
   margin-bottom: 20px;
   border: 1px solid #60a5fa;
   border-radius: 5px;
+  font-size: 16px;
+  line-height: 16px;
 }
 
 form > input:focus {
